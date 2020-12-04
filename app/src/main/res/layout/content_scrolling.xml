@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbars="vertical"
+    android:verticalScrollbarPosition="right"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:id="@+id/asOf"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/updated_as_of"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/asOf"
+            android:layout_marginStart="5dp"
+            android:autofillHints=""
+            android:hint="@string/date"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/btSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/date"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="188dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/date"
+            android:textOff="       "
+            android:textOn="        "
+            android:thumb="@drawable/thumb"
+            app:showText="true"
+            app:thumbTextPadding="5dp"
+            app:track="@drawable/track"
+             />
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/GaugeTemp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/btSwitch"
+            android:layout_alignBaseline="@id/GaugeHum"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/ambTemp"
+            android:layout_width="158dp"
+            android:layout_height="63dp"
+            android:layout_below="@id/date"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="140dp"
+            android:gravity="center"
+            android:text="@string/ambient_temperature"
+            android:textColor="@android:color/black"
+            app:drawableLeftCompat="@mipmap/ic_temp" />
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/GaugeHum"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/btSwitch"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="40dp"
+            android:padding="0dp" />
+
+        <TextView
+            android:id="@+id/hum"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/btSwitch"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="145dp"
+            android:layout_marginRight="46dp"
+            android:drawableLeft="@mipmap/ic_hum"
+            android:gravity="center"
+            android:text="@string/humidity"
+            android:textColor="@android:color/black"
+
+            />
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/GaugeWTemp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/ambTemp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="58dp" />
+
+        <TextView
+            android:id="@+id/wTemp"
+            android:layout_width="140dp"
+            android:layout_height="74dp"
+            android:layout_below="@id/ambTemp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="165dp"
+            android:drawableLeft="@mipmap/ic_wtemp"
+            android:gravity="center"
+            android:text="@string/water_temperature"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hum"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="180dp"
+            android:layout_marginRight="60dp"
+            android:drawableLeft="@mipmap/ic_fr"
+            android:gravity="center"
+            android:text="@string/flow_rate"
+            android:textColor="@android:color/black" />
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/GaugeFR"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/hum"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="55dp" />
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/GaugepH"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="525dp" />
+
+        <TextView
+            android:id="@+id/pH"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="645dp"
+            android:drawableLeft="@mipmap/ic_ph"
+            android:gravity="center"
+            android:text=" Water Acidity"
+            android:textAlignment="center"
+
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/smTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pH"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/border"
+            android:padding="5dp"
+            android:text="@string/serial_monitor"
+            android:textColor="@android:color/black" />
+
+
+        <Button
+            android:id="@+id/sdate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/smTxt"
+
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/select_date" />
+
+           <androidx.cardview.widget.CardView
+            android:id="@+id/cardmon"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/sdate"
+            android:elevation="5dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorPrimary"
+                android:elevation="10dp"
+                >
+                <TextView
+                    android:id="@+id/monitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-black"
+                    android:text=" "
+                    android:textColor="@color/yellow" />
+            </androidx.core.widget.NestedScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/graphtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardmon"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/border"
+            android:padding="5dp"
+            android:text="@string/graph"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/graphdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/graphtxt"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/graph_description"
+
+            android:textStyle="italic" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@id/graphdescription"
+            android:layout_marginBottom="50dp"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@android:color/transparent">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
